@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+data
+# Node.js / React UI
+ui/node_modules/
+ui/dist/
+ui/dist-ssr/
+ui/*.local
+ui/.eslintcache
+
+# Machine Learning & Data
+*.pkl
+backend/app/ml/artifacts/*.pkl
+data/*.csv
+data/*.json
+
+# TEE Enclave files
+*.eif
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Local Telemetry Docs
+Docs/user.md

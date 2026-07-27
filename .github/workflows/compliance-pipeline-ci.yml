@@ -1,0 +1,75 @@
+name: CipherPulse Compliance Pipeline CI/CD
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test-pipeline:
+    runs-on: ubuntu-latest
+
+    services:
+      # Spin up local PostgreSQL container to test the data ingestion pipeline
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: cipherpulse
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y postgresql-client
+
+    - name: Install pipeline requirements
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+        if [ -f etl/requirements.txt ]; then pip install -r etl/requirements.txt; fi
+        # Ensure testing packages are installed
+        pip install scikit-learn psycopg2-binary numpy
+
+    - name: Wait for PostgreSQL database service
+      run: |
+        until pg_isready -h localhost -p 5432 -U postgres; do
+          echo "Waiting for PostgreSQL database service to spin up..."
+          sleep 1
+        done
+
+    - name: Initialize Database Schema
+      run: |
+        PGPASSWORD=postgres psql -h localhost -U postgres -d cipherpulse -f infra/sql/schema.sql
+
+    - name: Run Orchestrated Compliance Data Pipeline
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cipherpulse
+        USE_TEE: 'false' # Local simulation for CI
+      run: |
+        python etl/run_pipeline.py --min-accuracy 0.90
+
+    - name: Archive Pipeline Run structured logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: compliance-pipeline-report
+        path: data/pipeline_report.json
+        if-no-files-found: warn
