@@ -1,9 +1,9 @@
 # Copilot Chat Conversation Export: AI-powered compliance surveillance tool
 
-**User:** @Anuj-kumar-in
+**User:** @Amriiiita07-ui
 **Thread URL:** https://github.com/copilot/c/5bd178fd-3e62-443f-b194-ee051e4ea9e7
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 Can you give me Top and critical particular finace related problems 
 
