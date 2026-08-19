@@ -16,7 +16,7 @@ Of course, I can help with that. However, the term "finance-related problems" is
 *   Personal finance challenges?
 *   Something else?
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 Bugs or feature requests in a specific financial software or repository?
 Common challenges in the financial industry (e.g., risk management, fraud detection)?
@@ -47,7 +47,7 @@ For example, you could name a repository like:
 
 Once you provide a repository name (in `owner/repo` format, e.g., `owner/repository-name`), I can search for open issues and pull requests that are labeled as "bug" or "feature request" and are considered critical.
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 i need innovative idea or particular problem for finace hackathon 
 
@@ -125,7 +125,7 @@ Small businesses are often underserved by complex financial tools built for larg
 
 Choose the problem that excites you the most! Good luck with the hackathon
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
  RegTech (Regulatory Technology) & Compliance
 This is a critical area for financial institutions, focused on making compliance easier and more robust.
@@ -224,7 +224,7 @@ Here's how you'd structure your work:
 
 By simulating the data, you cleverly bypass the access problem and can focus on what matters for the hackathon: **building a compelling and functional prototype that solves a real business problem.** Good luck
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 can i apply trusted execution environments in this so that user cant have any execuse to sharing data 
 
@@ -299,7 +299,7 @@ Here’s how you would structure your solution using a TEE (like AWS Nitro Encla
 
 By adding TEEs, you elevate your project from a cool "AI idea" to a "commercially viable and secure solution." It’s a fantastic direction to take.
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 find disadvantages of this project or defeciency which can be added
 
@@ -360,7 +360,7 @@ These are innovative features you could propose in your hackathon presentation t
 
 By presenting these deficiencies and proposed improvements, you demonstrate a deep understanding of the problem space, making your hackathon project much more credible and impressive.
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 make a full fledged step by step plan to build it i also want to make a ui and etl pipeline and analytical dashboard 
 
@@ -525,7 +525,7 @@ This plan is broken into phases. You can work on some in parallel.
 
 By following these phases, you will have built a powerful, multi-disciplinary project that is both technically impressive and solves a highly relevant business problem. Good luck
 
-## @Anuj-kumar-in
+## @Amriiiita07-ui
 
 make a comprehensive report in markdown 
 techstack usage 
