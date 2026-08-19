@@ -2,7 +2,7 @@
 
 Based on the conceptual plan in our chat, this guide explains how to transition CipherPulse from local inference to **Confidential Computing** using TEEs.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 In a TEE-secured deployment, the application is split into two parts:
 
@@ -29,7 +29,7 @@ sequenceDiagram
 
 ---
 
-## 🛠️ Implementation Steps
+## Implementation Steps
 
 ### 1. Create the Enclave Application (`enclave/app.py`)
 This script runs inside the enclave. It must be minimal and communicate via VSOCK.
@@ -89,7 +89,7 @@ nitro-cli run-enclave --eif cipherpulse.eif --memory 2048 --cpu-count 2
 
 ---
 
-## 🔐 The "Attestation" Step (Crucial for Trust)
+## The "Attestation" Step (Crucial for Trust)
 
 The financial firm (the client) doesn't just send data blindly. They perform **Remote Attestation**:
 
@@ -100,7 +100,7 @@ The financial firm (the client) doesn't just send data blindly. They perform **R
 
 ---
 
-## 📈 Advantages of this Approach
+## Advantages of this Approach
 *   **Zero-Trust**: Neither the developer nor the cloud provider can read the messages.
 *   **Compliance**: Meets strict data residency and privacy requirements (GDPR, FINRA, SEC).
 *   **Tamper-Proof**: If any line of code in the enclave is changed, the attestation hash will change, and the client will refuse to connect.
